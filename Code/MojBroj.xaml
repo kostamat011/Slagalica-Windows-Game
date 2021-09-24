@@ -1,0 +1,55 @@
+﻿<Window x:Class="SlagalicaPC.MojBroj"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SlagalicaPC"
+        mc:Ignorable="d"
+        Title="Moj broj" Height="445.156" Width="700.35"
+        ResizeMode="NoResize"
+        Icon="/SlagalicaPC;component/Images/mojbrojIcon.ico"
+        Closing="Window_Closing"
+        Background="#fbfc7e">
+    <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Name="Layout">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="694" Margin="0,20,0,0">
+            <Image Source="/SlagalicaPC;component/Images/sand-clock.png" Width="50" Height="40" Margin="50,10,0,20" HorizontalAlignment="Left"></Image>
+            <TextBlock Name="time_label" FontFamily="Arial" FontWeight="Black" FontSize="32" Margin="0,10,0,20" HorizontalAlignment="Left">99</TextBlock>
+            <Button Name="btnNumTarget"  HorizontalAlignment="Center" Style="{StaticResource TargetBox}" Width="120" Height="60" Margin="150,0,0,0"></Button>
+            <TextBlock Style="{StaticResource MenuLabel}" Margin="80,10,0,0"> Poeni:</TextBlock>
+            <TextBlock Name="lblScore" Style="{StaticResource MenuLabel}" Foreground="DarkRed" Margin="10,10,0,0" Width="100">0</TextBlock>
+        </StackPanel>
+
+        <WrapPanel Name="numbersPanel" Width="631" HorizontalAlignment="Center" >
+            <Button Name="btnNum1" Style="{StaticResource NumberBox}" Width="60" Height="60"  Click="Number_Click"></Button>
+            <Button Name="btnNum2" Style="{StaticResource NumberBox}" Width="60" Height="60"  Click="Number_Click"></Button>
+            <Button Name="btnNum3" Style="{StaticResource NumberBox}" Width="60" Height="60"  Click="Number_Click"></Button>
+            <Button Name="btnNum4" Style="{StaticResource NumberBox}" Width="60" Height="60"  Click="Number_Click"></Button>
+            <Button Name="btnNum5" Style="{StaticResource NumberBox}" Margin="50,0,0,0" Width="100" Height="60"  Click="Number_Click"></Button>
+            <Button Name="btnNum6" Style="{StaticResource NumberBox}" Margin="50,0,0,0" Width="100" Height="60"  Click="Number_Click"></Button>
+        </WrapPanel>
+        <StackPanel Orientation="Horizontal" x:Name="operationPanel" Width="514" HorizontalAlignment="Center" Margin="116,24,64,0" >
+            <Button x:Name="btnOp1" Style="{StaticResource SlagalicaRoundButton}" Width="60" Height="60" Margin="5,0,0,0"  Click="Number_Click" Content="+"/>
+            <Button x:Name="btnOp2" Style="{StaticResource SlagalicaRoundButton}" Width="60" Height="60" Margin="5,0,0,0" Click="Number_Click" Content="-"/>
+            <Button x:Name="btnOp3" Style="{StaticResource SlagalicaRoundButton}" Width="60" Height="60" Margin="5,0,0,0" Click="Number_Click" Content="*"/>
+            <Button x:Name="btnOp4" Style="{StaticResource SlagalicaRoundButton}" Width="60" Height="60" Margin="5,0,0,0" Click="Number_Click" Content="/"/>
+            <Button x:Name="btnOp5" Style="{StaticResource SlagalicaRoundButton}" Width="60" Height="60" Margin="5,0,0,0" Click="Number_Click" Content="("/>
+            <Button x:Name="btnOp6" Style="{StaticResource SlagalicaRoundButton}" Width="60" Height="60" Margin="5,0,0,0" Click="Number_Click" Content=")"/>
+            <Button x:Name="btnDel" Style="{StaticResource SlagalicaRoundButton}"  Width="60" Height="60" Margin="5,0,0,0" Content="←" Click="ButtonDel_Click" />
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <TextBox Name="tbEquation" BorderBrush="Black" BorderThickness="1" Height="50" Background="#7eccfc" FontSize="32" Width="400" IsReadOnly="True" GotFocus="TextBox_GotFocus" TextChanged="TbEquation_TextChanged" />
+            <TextBox Name="tbResult" BorderBrush="Black" BorderThickness="1" Height="50" Background="#7eccfc" FontSize="32" Width="80" IsReadOnly="True" GotFocus="TextBox_GotFocus" />
+
+
+        </StackPanel>
+
+        <TextBox Width="0" Height="0" Name="focus_shift"></TextBox>
+        <Button Style="{StaticResource SlagalicaRoundButton}"  HorizontalAlignment="Center" Width="300" Height="50" Margin="0,30,0,0" Background="#7eccfc" Click="ButtonControl_Click">
+            <Button.Content>
+                <TextBlock Name="button_text" Foreground="Black" FontSize="24" FontFamily="Arial" FontWeight="Black">STOP</TextBlock>
+            </Button.Content>
+        </Button>
+    </StackPanel>
+</Window>
+

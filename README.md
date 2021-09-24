@@ -1,5 +1,6 @@
 # Slagalica-Windows-Game
 Recreation of famous Serbian TV Show game Slagalica for Windows<br>
+Created by me in 2019<br>
 Download Installer or portable version in ZIP
 
 Game consists of 6 mini-games:
